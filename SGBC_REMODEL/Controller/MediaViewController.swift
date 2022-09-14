@@ -22,8 +22,12 @@ class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
         tabBarController?.tabBar.isHidden = false
-
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

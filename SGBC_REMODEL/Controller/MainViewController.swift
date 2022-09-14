@@ -16,6 +16,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         MainTableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "mainidentifier")
         MainTableView.delegate = self
         MainTableView.dataSource = self
@@ -23,9 +24,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        tabBarController?.tabBar.isHidden = false
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mainTableViewGroups.count
