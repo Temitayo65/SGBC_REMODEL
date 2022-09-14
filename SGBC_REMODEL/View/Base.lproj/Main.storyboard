@@ -193,63 +193,47 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UH9-hH-VMy">
-                                <rect key="frame" x="112" y="84.5" width="85" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="hsh-2C-8xZ"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Series"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znC-Xp-ROQ">
-                                <rect key="frame" x="311" y="84.5" width="95" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="ar5-hH-M87"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Speakers"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcd-wX-j00">
-                                <rect key="frame" x="216" y="84.5" width="85" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="nnL-dD-cMX"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Books"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-LG-ewc">
-                                <rect key="frame" x="19" y="92" width="85" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="5Sl-CS-cHu"/>
-                                    <constraint firstAttribute="height" constant="20" id="sNy-Jl-Ysb"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Recent"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fVk-xM-OHM">
+                                <rect key="frame" x="34.5" y="92" width="345" height="34.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dc-LG-ewc">
+                                        <rect key="frame" x="0.0" y="0.0" width="77.5" height="34.5"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Recent"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UH9-hH-VMy">
+                                        <rect key="frame" x="87.5" y="0.0" width="71.5" height="34.5"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Series"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcd-wX-j00">
+                                        <rect key="frame" x="169" y="0.0" width="71" height="34.5"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Books"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znC-Xp-ROQ">
+                                        <rect key="frame" x="250" y="0.0" width="95" height="34.5"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Speakers"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8pZ-hE-gT8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UH9-hH-VMy" firstAttribute="centerY" secondItem="7dc-LG-ewc" secondAttribute="centerY" id="1UE-1Z-Ko3"/>
-                            <constraint firstItem="lcd-wX-j00" firstAttribute="centerY" secondItem="UH9-hH-VMy" secondAttribute="centerY" id="1yo-HG-hI4"/>
-                            <constraint firstItem="lcd-wX-j00" firstAttribute="leading" secondItem="UH9-hH-VMy" secondAttribute="trailing" constant="19" id="46k-7N-C63"/>
-                            <constraint firstItem="znC-Xp-ROQ" firstAttribute="centerY" secondItem="lcd-wX-j00" secondAttribute="centerY" id="4Zl-ug-8F2"/>
                             <constraint firstItem="raP-7v-D29" firstAttribute="trailing" secondItem="8pZ-hE-gT8" secondAttribute="trailing" id="5fG-R8-cLK"/>
+                            <constraint firstItem="fVk-xM-OHM" firstAttribute="top" secondItem="WGi-ta-98a" secondAttribute="top" constant="92" id="FAK-jX-Hee"/>
                             <constraint firstItem="raP-7v-D29" firstAttribute="leading" secondItem="8pZ-hE-gT8" secondAttribute="leading" id="bgy-9o-Hor"/>
-                            <constraint firstItem="7dc-LG-ewc" firstAttribute="top" secondItem="Ppk-n7-aZO" secondAttribute="bottom" constant="-36" id="dp4-nk-oCx"/>
                             <constraint firstItem="raP-7v-D29" firstAttribute="top" secondItem="Ppk-n7-aZO" secondAttribute="bottom" constant="8.5" id="dqU-tS-YU2"/>
-                            <constraint firstItem="8pZ-hE-gT8" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="znC-Xp-ROQ" secondAttribute="trailing" symbolic="YES" id="fAU-lF-TjG"/>
-                            <constraint firstItem="UH9-hH-VMy" firstAttribute="leading" secondItem="7dc-LG-ewc" secondAttribute="trailing" constant="8" symbolic="YES" id="goj-hw-m3Y"/>
                             <constraint firstAttribute="bottom" secondItem="raP-7v-D29" secondAttribute="bottom" id="lgA-9a-hzB"/>
                             <constraint firstItem="Ppk-n7-aZO" firstAttribute="trailing" secondItem="8pZ-hE-gT8" secondAttribute="trailing" id="mj3-UF-Jpa"/>
-                            <constraint firstItem="znC-Xp-ROQ" firstAttribute="leading" secondItem="lcd-wX-j00" secondAttribute="trailing" constant="10" id="myR-By-HJV"/>
-                            <constraint firstItem="Ppk-n7-aZO" firstAttribute="leading" secondItem="7dc-LG-ewc" secondAttribute="trailing" constant="-104" id="rfu-Un-4Qc"/>
                             <constraint firstItem="Ppk-n7-aZO" firstAttribute="top" secondItem="WGi-ta-98a" secondAttribute="top" id="tAL-5X-b6V"/>
-                            <constraint firstItem="7dc-LG-ewc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8pZ-hE-gT8" secondAttribute="leading" constant="15" id="xb9-d3-l9u"/>
+                            <constraint firstItem="fVk-xM-OHM" firstAttribute="centerX" secondItem="WGi-ta-98a" secondAttribute="centerX" id="yON-3c-SU7"/>
                             <constraint firstItem="Ppk-n7-aZO" firstAttribute="leading" secondItem="8pZ-hE-gT8" secondAttribute="leading" id="yYc-Rw-bly"/>
                         </constraints>
                     </view>
@@ -290,19 +274,13 @@
                                 </segments>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SermonTitleLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQr-NB-TsH">
-                                <rect key="frame" x="127.5" y="501" width="159" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="159" id="vaO-QS-RhK"/>
-                                </constraints>
+                                <rect key="frame" x="10" y="501" width="394" height="23"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PreacherTitleLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osg-rv-a1M">
                                 <rect key="frame" x="136" y="531.5" width="142" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="142" id="eWA-Hw-nnP"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -362,7 +340,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-qV-2PL">
-                                <rect key="frame" x="42" y="592" width="34.5" height="21"/>
+                                <rect key="frame" x="42" y="592" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -382,6 +360,7 @@
                             <constraint firstItem="GCS-MV-dm7" firstAttribute="top" secondItem="Jwk-UM-r3k" secondAttribute="bottom" constant="6" id="4jB-L8-7wn"/>
                             <constraint firstItem="NqN-Nq-rgp" firstAttribute="centerX" secondItem="osg-rv-a1M" secondAttribute="centerX" id="5g2-XL-Cyh"/>
                             <constraint firstItem="HAy-qq-eD1" firstAttribute="top" secondItem="A68-yr-VHi" secondAttribute="bottom" constant="6" id="61G-WY-UDV"/>
+                            <constraint firstItem="QQr-NB-TsH" firstAttribute="leading" secondItem="YVh-5H-Xc5" secondAttribute="leading" constant="10" id="6n5-59-Os1"/>
                             <constraint firstItem="n0e-qV-2PL" firstAttribute="leading" secondItem="NqN-Nq-rgp" secondAttribute="leading" id="7AU-VI-89q"/>
                             <constraint firstItem="lSI-8n-FK8" firstAttribute="centerX" secondItem="D6d-Nv-v6F" secondAttribute="centerX" id="9bT-aY-7ck"/>
                             <constraint firstItem="YVh-5H-Xc5" firstAttribute="trailing" secondItem="Jwk-UM-r3k" secondAttribute="trailing" constant="118" id="BZe-Ty-GIh"/>
@@ -405,7 +384,6 @@
                             <constraint firstItem="Jwk-UM-r3k" firstAttribute="centerY" secondItem="z6s-bP-LBa" secondAttribute="centerY" id="io6-qv-JJC"/>
                             <constraint firstItem="GCS-MV-dm7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HAy-qq-eD1" secondAttribute="trailing" constant="8" symbolic="YES" id="j3V-Nr-7MB"/>
                             <constraint firstItem="YVh-5H-Xc5" firstAttribute="trailing" secondItem="1fd-fw-Vz1" secondAttribute="trailing" constant="41" id="mZK-nZ-vbF"/>
-                            <constraint firstItem="TDQ-3u-Y9d" firstAttribute="width" secondItem="lSI-8n-FK8" secondAttribute="width" multiplier="0.859375" id="naK-SR-uz1"/>
                             <constraint firstItem="z6s-bP-LBa" firstAttribute="top" secondItem="NqN-Nq-rgp" secondAttribute="bottom" constant="18" id="o9H-ee-8Hb"/>
                             <constraint firstItem="1fd-fw-Vz1" firstAttribute="top" secondItem="TDQ-3u-Y9d" secondAttribute="bottom" constant="5" id="pM0-hq-6EH"/>
                             <constraint firstItem="osg-rv-a1M" firstAttribute="top" secondItem="QQr-NB-TsH" secondAttribute="bottom" constant="7.5" id="qFZ-WV-xjI"/>

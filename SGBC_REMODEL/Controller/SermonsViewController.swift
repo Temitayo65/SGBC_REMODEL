@@ -90,15 +90,17 @@ class SermonsViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.RecentSermonDate.text = sermons[indexPath.row].date_preached
             cell.RecentSermonImageView.image = UIImage(named: "placeholder")
             cell.RecentSermonPreacherName.text = sermons[indexPath.row].sermonPastor.first_name + " " + sermons[indexPath.row].sermonPastor.last_name
-            return cell 
+            return cell
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         currentIndexPath = indexPath.row
-        tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "playAudio", sender: self)
+    
+            tableView.deselectRow(at: indexPath, animated: true)
+            performSegue(withIdentifier: "playAudio", sender: self)
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

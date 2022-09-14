@@ -49,7 +49,9 @@ class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "sermonsSegue", sender: self)
+        if indexPath.row == 0{
+            performSegue(withIdentifier: "sermonsSegue", sender: self)
+        }
     }
     
 }
