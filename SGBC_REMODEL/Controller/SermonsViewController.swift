@@ -112,6 +112,7 @@ class SermonsViewController: UIViewController, UITableViewDelegate, UITableViewD
             vc.sermonImageURL = sermons[currentIndexPath].sermonImage?.image_url ?? "Nothing here"
             vc.preacherTitle = sermons[currentIndexPath].sermonPastor.first_name + " " + sermons[currentIndexPath].sermonPastor.last_name
             vc.sermonTitle = sermons[currentIndexPath].title
+            vc.sermonAudioURL = sermons[currentIndexPath].sermonAudio.audio_url
             
         }
     }
