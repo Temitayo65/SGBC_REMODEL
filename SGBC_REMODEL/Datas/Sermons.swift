@@ -8,6 +8,13 @@
 import Foundation
 
 struct Sermons: Codable{
+    let status: String
+    let message: String
+    let data: [Sermon]
+    
+}
+
+struct Sermon: Codable{
     let title: String
     let date_preached: String
     let pastor_id: String

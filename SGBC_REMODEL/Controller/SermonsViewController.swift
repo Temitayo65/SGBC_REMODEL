@@ -7,13 +7,17 @@
 
 import UIKit
 
-class SermonsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SermonManagerDelegate{
+class SermonsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SermonManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
+  
+    
    
     var sermonManager = SermonManager()
-    var sermons = [Sermons]()
+    var sermons = [Sermon]()
     var currentIndexPath: Int = 0
     @IBOutlet var spinner: UIActivityIndicatorView!
     var sermonByBookData = ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy", "Joshua", "Judges", "Ruth", "1 Samuel", "2 Samuel","1 Kings", "2 Kings", "1 Chronicles", "2 Chronicles", "Ezra", "Nehemiah", "Esther", "Job", "Psalms", "Proverbs", "Ecclessiastes", "Song of Solomon", "Isaiah", "Jeremiah", "Lamentation", "Ezekiel", "Daniel", "Hosea", "Joel", "Amos", "Obadiah", "Jonah", "Micah", "Nahum", "Habakkuk", "Zepheniah","Haggai", "Zechariah", "Malachi", "Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2Timothy", "Titus", "Philemon", "Hebrew", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation"]
+    let itemsPerRow: CGFloat = 2
+    let sectionInsets = UIEdgeInsets(top: 10.0, left: 30.0, bottom: 10.0, right: 40.0)
    
 
     @IBOutlet var SermonsHeaderImageView: UIImageView!
@@ -23,7 +27,8 @@ class SermonsViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var speakersSermonButton: UIButton!
     
     @IBOutlet var recentSermonsTableView: UITableView!
-    
+    @IBOutlet var sermonByBooksTableView: UITableView!
+    @IBOutlet var sermonBySeriesCollectionView: UICollectionView!
     
     let refreshControl = UIRefreshControl()
     override func viewDidLoad() {
@@ -53,6 +58,11 @@ class SermonsViewController: UIViewController, UITableViewDelegate, UITableViewD
         sermonByBooksTableView.register(UINib(nibName: "SermonByBooksTableViewCell", bundle: nil), forCellReuseIdentifier: "sermonbybooksidentifier")
         sermonByBooksTableView.delegate = self
         sermonByBooksTableView.dataSource = self
+        
+        sermonBySeriesCollectionView.register(UINib(nibName: "SermonBySeriesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "sermonbyseriesidentifier")
+        sermonBySeriesCollectionView.delegate = self
+        sermonBySeriesCollectionView.dataSource = self
+        
 
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
@@ -66,6 +76,8 @@ class SermonsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         recentSermonButton.backgroundColor = .blue
         sermonByBooksTableView.isHidden = true
+        sermonBySeriesCollectionView.isHidden = true
+
         
     }
     
@@ -125,8 +137,26 @@ class SermonsViewController: UIViewController, UITableViewDelegate, UITableViewD
         else if tableView == sermonByBooksTableView{return 40}
         else{return 40}
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sermonbyseriesidentifier", for: indexPath) as? SermonBySeriesCollectionViewCell{
+            cell.seriesImageView.image = UIImage(named: "placeholder")
+            cell.seriesTitle.text = "THE SOVEREIGNTY OF GOD IN PROVIDENCE"
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
 
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "playAudio"{
             let vc = segue.destination as! SermonAudioPlayerViewController
@@ -134,11 +164,10 @@ class SermonsViewController: UIViewController, UITableViewDelegate, UITableViewD
             vc.preacherTitle = sermons[currentIndexPath].sermonPastor.first_name + " " + sermons[currentIndexPath].sermonPastor.last_name
             vc.sermonTitle = sermons[currentIndexPath].title
             vc.sermonAudioURL = sermons[currentIndexPath].sermonAudio.audio_url
-            
         }
     }
     
-    func didUpdateSermonData(sermon: [Sermons]?) {
+    func didUpdateSermonData(sermon: [Sermon]?) {
         DispatchQueue.main.async {
             if let sermon = sermon {
                 self.sermons = sermon
@@ -148,26 +177,62 @@ class SermonsViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
     }
-    
-    @IBOutlet var sermonByBooksTableView: UITableView!
+
     
     
     @IBAction func categoryButtonPressed(_ sender: UIButton) {
         if sender.titleLabel?.text?.lowercased() == "books"{
             recentSermonsTableView.isHidden = true
             sermonByBooksTableView.isHidden = false
+            sermonBySeriesCollectionView.isHidden = true
             booksSermonButton.backgroundColor = .blue
             recentSermonButton.backgroundColor = .clear
+            seriesSermonButton.backgroundColor = .clear
         }
         else if sender.titleLabel?.text?.lowercased() == "recent"{
             recentSermonsTableView.isHidden = false
             sermonByBooksTableView.isHidden = true
+            sermonBySeriesCollectionView.isHidden = true
             booksSermonButton.backgroundColor = .clear
             recentSermonButton.backgroundColor = .blue
+            seriesSermonButton.backgroundColor = .clear
+        }
+        else if sender.titleLabel?.text?.lowercased() == "series"{
+            recentSermonButton.backgroundColor = .clear
+            booksSermonButton.backgroundColor = .clear
+            seriesSermonButton.backgroundColor = .blue
+            recentSermonsTableView.isHidden = true
+            sermonByBooksTableView.isHidden = true
+            sermonBySeriesCollectionView.isHidden = false
         }
         
     }
     
     
     
+}
+
+extension SermonsViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+       }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 0.0
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+//        let availableWidth = view.frame.width - paddingSpace
+//        let widthPerItem = availableWidth / itemsPerRow
+        return CGSize(width: view.frame.width / 2.5, height: 250)
+        }
+    
+
+      
+      // 3
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+      }
+      
 }

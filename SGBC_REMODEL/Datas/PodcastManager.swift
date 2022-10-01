@@ -1,22 +1,22 @@
 //
-//  SermonManager.swift
+//  PodcastManager.swift
 //  SGBC_REMODEL
 //
-//  Created by ADMIN on 13/09/2022.
+//  Created by ADMIN on 27/09/2022.
 //
 
 import Foundation
 
-protocol SermonManagerDelegate{
-    func didUpdateSermonData(sermon: [Sermon]?)
+protocol PodcastManagerDelegate{
+    func didUpdatePodcastData(podcast: [Podcast]?)
 }
 
-struct SermonManager{
-    let baseURL = "https://still-savannah-43128.herokuapp.com/sermons/all"
-    var delegate: SermonManagerDelegate?
+struct PodcastManager{
+    let baseURL = "https://still-savannah-43128.herokuapp.com/podcasts"
+    var delegate: PodcastManagerDelegate?
    
     
-    func fetchSermons(){
+    func fetchPodcasts(){
         performRequest(urlString: baseURL)
     }
     
@@ -29,8 +29,8 @@ struct SermonManager{
                     return
                 }
                 if let safeData = data{
-                    if let sermon = parseJSON(data: safeData){
-                        self.delegate?.didUpdateSermonData(sermon: sermon)
+                    if let podcast = parseJSON(data: safeData){
+                        self.delegate?.didUpdatePodcastData(podcast: podcast)
                     }
                 }
             }
@@ -39,11 +39,11 @@ struct SermonManager{
                 
     }
     
-    func parseJSON(data: Data)-> [Sermon]?{
+    func parseJSON(data: Data)-> [Podcast]?{
         let decoder = JSONDecoder()
-        if let data = try? decoder.decode(Sermons.self, from: data){
-            let sermons = data.data
-            return sermons
+        if let data = try? decoder.decode(Podcasts.self, from: data){
+            let podcasts = data.data
+            return podcasts
         }
         return nil
     }

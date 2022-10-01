@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newscellidentifier" rowHeight="104" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="SGBC_REMODEL" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="395" height="104"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="395" height="104"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g4M-MW-wyD">
+                        <rect key="frame" x="10" y="15" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="Pdd-yl-qBt"/>
+                            <constraint firstAttribute="height" constant="48" id="leJ-lk-YMT"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="newsTitleLabel" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mn-6i-rxK">
+                        <rect key="frame" x="68" y="15" width="317" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="newsBodyText" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaW-b4-nQp">
+                        <rect key="frame" x="68" y="44" width="317" height="19.333333333333329"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="newsTimeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="wpK-KW-gc6">
+                        <rect key="frame" x="68" y="73.333333333333329" width="317" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="g4M-MW-wyD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="7mr-aY-CR5"/>
+                    <constraint firstItem="NaW-b4-nQp" firstAttribute="leading" secondItem="g4M-MW-wyD" secondAttribute="trailing" constant="10" id="GWg-n6-5K9"/>
+                    <constraint firstAttribute="trailing" secondItem="wpK-KW-gc6" secondAttribute="trailing" constant="10" id="IEm-CP-LCX"/>
+                    <constraint firstItem="wpK-KW-gc6" firstAttribute="top" secondItem="NaW-b4-nQp" secondAttribute="bottom" constant="10" id="L9G-jj-slU"/>
+                    <constraint firstItem="wpK-KW-gc6" firstAttribute="leading" secondItem="g4M-MW-wyD" secondAttribute="trailing" constant="10" id="Q3H-3u-Soq"/>
+                    <constraint firstItem="7mn-6i-rxK" firstAttribute="top" secondItem="g4M-MW-wyD" secondAttribute="top" id="YGF-e0-q4w"/>
+                    <constraint firstItem="NaW-b4-nQp" firstAttribute="top" secondItem="7mn-6i-rxK" secondAttribute="bottom" constant="5" id="Zri-ev-19E"/>
+                    <constraint firstAttribute="trailing" secondItem="NaW-b4-nQp" secondAttribute="trailing" constant="10" id="epH-BE-fA8"/>
+                    <constraint firstAttribute="trailing" secondItem="7mn-6i-rxK" secondAttribute="trailing" constant="10" id="iip-vo-bUL"/>
+                    <constraint firstItem="7mn-6i-rxK" firstAttribute="leading" secondItem="g4M-MW-wyD" secondAttribute="trailing" constant="10" id="jqP-GM-zNx"/>
+                    <constraint firstItem="g4M-MW-wyD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="w1P-KJ-lsT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="newsBodyTextLabel" destination="NaW-b4-nQp" id="fgy-LI-xjk"/>
+                <outlet property="newsImageView" destination="g4M-MW-wyD" id="Rxy-xX-FYS"/>
+                <outlet property="newsTimeLabel" destination="wpK-KW-gc6" id="VoM-7I-c1V"/>
+                <outlet property="newsTitleLabel" destination="7mn-6i-rxK" id="2RW-GI-W9I"/>
+            </connections>
+            <point key="canvasLocation" x="85.384615384615387" y="41.943127962085306"/>
+        </tableViewCell>
+    </objects>
+</document>

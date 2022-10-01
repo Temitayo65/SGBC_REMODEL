@@ -54,9 +54,13 @@ class MediaViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if indexPath.row == 0 {
             performSegue(withIdentifier: "sermonsSegue", sender: self)
         }
+        if indexPath.row == 1{
+            performSegue(withIdentifier: "podcastSegue", sender: self)
+        }
         if indexPath.row == 4{
             performSegue(withIdentifier: "hymns", sender: self)
         }
+        
     }
     
 }

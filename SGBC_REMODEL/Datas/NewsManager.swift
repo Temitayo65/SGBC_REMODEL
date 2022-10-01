@@ -1,22 +1,22 @@
 //
-//  SermonManager.swift
+//  NewsManager.swift
 //  SGBC_REMODEL
 //
-//  Created by ADMIN on 13/09/2022.
+//  Created by ADMIN on 01/10/2022.
 //
 
 import Foundation
 
-protocol SermonManagerDelegate{
-    func didUpdateSermonData(sermon: [Sermon]?)
+protocol NewstManagerDelegate{
+    func didUpdateNewsData(news: [NewsData]?)
 }
 
-struct SermonManager{
-    let baseURL = "https://still-savannah-43128.herokuapp.com/sermons/all"
-    var delegate: SermonManagerDelegate?
+struct NewsManager{
+    let baseURL = "https://still-savannah-43128.herokuapp.com/news"
+    var delegate: NewstManagerDelegate?
    
     
-    func fetchSermons(){
+    func fetchNews(){
         performRequest(urlString: baseURL)
     }
     
@@ -29,8 +29,8 @@ struct SermonManager{
                     return
                 }
                 if let safeData = data{
-                    if let sermon = parseJSON(data: safeData){
-                        self.delegate?.didUpdateSermonData(sermon: sermon)
+                    if let news = parseJSON(data: safeData){
+                        self.delegate?.didUpdateNewsData(news: news)
                     }
                 }
             }
@@ -39,11 +39,11 @@ struct SermonManager{
                 
     }
     
-    func parseJSON(data: Data)-> [Sermon]?{
+    func parseJSON(data: Data)-> [NewsData]?{
         let decoder = JSONDecoder()
-        if let data = try? decoder.decode(Sermons.self, from: data){
-            let sermons = data.data
-            return sermons
+        if let data = try? decoder.decode(News.self, from: data){
+            let news = data.data
+            return news
         }
         return nil
     }

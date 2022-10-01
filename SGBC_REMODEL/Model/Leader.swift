@@ -8,7 +8,6 @@
 import Foundation
 
 struct Leader{
-    
     let leaderName: String
     let leaderHistory: String
     let leaderImage: String 
