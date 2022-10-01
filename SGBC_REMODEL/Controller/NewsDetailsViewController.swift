@@ -40,6 +40,7 @@ class NewsDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             let index = details.firstIndex(of: ".")!
             let first_part = String(details[...index])
             let last_part = String(details.suffix(details.count - first_part.count - 1))
+            cell.newsTitle.text = newsTitle.uppercased()
             cell.firstSectionTextLabel.text = first_part
             cell.secondSectionTextLabel.text = last_part
             return cell

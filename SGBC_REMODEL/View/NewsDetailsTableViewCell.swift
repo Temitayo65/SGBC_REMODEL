@@ -9,6 +9,7 @@ import UIKit
 
 class NewsDetailsTableViewCell: UITableViewCell {
 
+    @IBOutlet var newsTitle: UILabel!
     @IBOutlet var firstSectionTextLabel: UILabel!
     @IBOutlet var newsImageView: UIImageView!
     @IBOutlet var secondSectionTextLabel: UILabel!
