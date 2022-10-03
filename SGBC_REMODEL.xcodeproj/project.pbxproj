@@ -909,6 +909,8 @@
 		84D8CCDB28E7E4E500C53CE1 /* NewsDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8CCD928E7E4E500C53CE1 /* NewsDetailsTableViewCell.swift */; };
 		84D8CCDC28E7E4E500C53CE1 /* NewsDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D8CCDA28E7E4E500C53CE1 /* NewsDetailsTableViewCell.xib */; };
 		84D8CCE228E7E5C300C53CE1 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8CCE128E7E5C300C53CE1 /* NewsDetailsViewController.swift */; };
+		84D8CCE528EB858B00C53CE1 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8CCE328EB858B00C53CE1 /* SearchTableViewCell.swift */; };
+		84D8CCE628EB858B00C53CE1 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D8CCE428EB858B00C53CE1 /* SearchTableViewCell.xib */; };
 		84EF489128D925B500E20B9E /* Leader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF489028D925B500E20B9E /* Leader.swift */; };
 		84F8E3B228D9D9150063A875 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F8E3B128D9D9150063A875 /* AboutTableViewController.swift */; };
 		84F8E3B528D9DBAD0063A875 /* AboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F8E3B328D9DBAD0063A875 /* AboutTableViewCell.swift */; };
@@ -1822,6 +1824,8 @@
 		84D8CCD928E7E4E500C53CE1 /* NewsDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		84D8CCDA28E7E4E500C53CE1 /* NewsDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		84D8CCE128E7E5C300C53CE1 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
+		84D8CCE328EB858B00C53CE1 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		84D8CCE428EB858B00C53CE1 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		84EF489028D925B500E20B9E /* Leader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leader.swift; sourceTree = "<group>"; };
 		84F8E3B128D9D9150063A875 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		84F8E3B328D9DBAD0063A875 /* AboutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewCell.swift; sourceTree = "<group>"; };
@@ -2805,6 +2809,8 @@
 				84D8CCD628E7D4A600C53CE1 /* NewsTableViewCell.xib */,
 				84D8CCD928E7E4E500C53CE1 /* NewsDetailsTableViewCell.swift */,
 				84D8CCDA28E7E4E500C53CE1 /* NewsDetailsTableViewCell.xib */,
+				84D8CCE328EB858B00C53CE1 /* SearchTableViewCell.swift */,
+				84D8CCE428EB858B00C53CE1 /* SearchTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2824,9 +2830,9 @@
 			children = (
 				84BFBDEC28D1067C001709F0 /* Sermons.swift */,
 				8410937028E28ED200BF8BB6 /* Podcasts.swift */,
+				84D8CCCD28E7C95000C53CE1 /* News.swift */,
 				84BFBDEE28D10699001709F0 /* SermonManager.swift */,
 				8410937228E28F0100BF8BB6 /* PodcastManager.swift */,
-				84D8CCCD28E7C95000C53CE1 /* News.swift */,
 				84D8CCCF28E7CA4200C53CE1 /* NewsManager.swift */,
 			);
 			path = Datas;
@@ -3386,6 +3392,7 @@
 				841C881D28D57E5200171827 /* Hymn 288.pdf in Resources */,
 				841C851D28D57E5200171827 /* Hymn 537.pdf in Resources */,
 				841C87F828D57E5200171827 /* Hymn 302.pdf in Resources */,
+				84D8CCE628EB858B00C53CE1 /* SearchTableViewCell.xib in Resources */,
 				841C855128D57E5200171827 /* Hymn 89 3.pdf in Resources */,
 				841C85E028D57E5200171827 /* Hymn 72 3.pdf in Resources */,
 				841C880528D57E5200171827 /* Hymn 63 1.pdf in Resources */,
@@ -3833,6 +3840,7 @@
 				84D8CCD228E7D19100C53CE1 /* NewsViewController.swift in Sources */,
 				84A0C40B28D91C1600E89D3A /* LeadershipCollectionViewCell.swift in Sources */,
 				8410937528E294A200BF8BB6 /* PodcastViewController.swift in Sources */,
+				84D8CCE528EB858B00C53CE1 /* SearchTableViewCell.swift in Sources */,
 				84636F0228DDC15C007ED8B8 /* SermonByBooksTableViewCell.swift in Sources */,
 				84BFBDD128D0B71C001709F0 /* SceneDelegate.swift in Sources */,
 				84F8E3B228D9D9150063A875 /* AboutTableViewController.swift in Sources */,
@@ -4000,6 +4008,7 @@
 				DEVELOPMENT_TEAM = 2D8LVDKBG6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SGBC_REMODEL/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SGBC;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -4029,6 +4038,7 @@
 				DEVELOPMENT_TEAM = 2D8LVDKBG6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SGBC_REMODEL/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SGBC;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

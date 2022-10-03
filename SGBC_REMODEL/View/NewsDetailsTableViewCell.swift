@@ -17,7 +17,7 @@ class NewsDetailsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        newsImageView.layer.cornerRadius = 10 
+       // newsImageView.layer.cornerRadius = 5
     }
 
     

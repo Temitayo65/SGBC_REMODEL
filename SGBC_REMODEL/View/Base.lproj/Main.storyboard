@@ -792,14 +792,61 @@
                     <view key="view" contentMode="scaleToFill" id="vbA-HX-hHK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="fy4-Y3-S1G">
+                                <rect key="frame" x="107" y="192" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="tk2-B3-8EN"/>
+                                    <constraint firstAttribute="width" constant="200" id="vhZ-RP-Ogs"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Content " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="1Q6-pX-C1P" userLabel="Find Contents">
+                                <rect key="frame" x="10" y="412" width="394" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8pE-TD-yYJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for content by title or by speaker" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="eWI-q1-4wk">
+                                <rect key="frame" x="10" y="462" width="394" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="81H-Qq-HYm">
+                                <rect key="frame" x="0.0" y="122" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BHG-xA-CHj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="81H-Qq-HYm" firstAttribute="leading" secondItem="vbA-HX-hHK" secondAttribute="leading" id="0yP-yP-ALu"/>
+                            <constraint firstItem="81H-Qq-HYm" firstAttribute="top" secondItem="BHG-xA-CHj" secondAttribute="top" constant="30" id="1bt-SZ-Rbx"/>
+                            <constraint firstItem="eWI-q1-4wk" firstAttribute="top" secondItem="1Q6-pX-C1P" secondAttribute="bottom" constant="20" id="1pj-9A-8Ha"/>
+                            <constraint firstItem="1Q6-pX-C1P" firstAttribute="top" secondItem="fy4-Y3-S1G" secondAttribute="bottom" constant="20" id="4qj-ZE-o5t"/>
+                            <constraint firstItem="fy4-Y3-S1G" firstAttribute="top" secondItem="BHG-xA-CHj" secondAttribute="top" constant="100" id="Btz-wT-XF2"/>
+                            <constraint firstAttribute="bottom" secondItem="81H-Qq-HYm" secondAttribute="bottom" id="LCC-mc-JCj"/>
+                            <constraint firstItem="eWI-q1-4wk" firstAttribute="leading" secondItem="BHG-xA-CHj" secondAttribute="leading" constant="10" id="QrU-gi-vsg"/>
+                            <constraint firstItem="fy4-Y3-S1G" firstAttribute="centerX" secondItem="vbA-HX-hHK" secondAttribute="centerX" id="SDV-Vn-OFt"/>
+                            <constraint firstItem="BHG-xA-CHj" firstAttribute="trailing" secondItem="1Q6-pX-C1P" secondAttribute="trailing" constant="10" id="cRn-ax-6eo"/>
+                            <constraint firstAttribute="trailing" secondItem="eWI-q1-4wk" secondAttribute="trailing" constant="10" id="dJP-oX-kZh"/>
+                            <constraint firstItem="1Q6-pX-C1P" firstAttribute="leading" secondItem="BHG-xA-CHj" secondAttribute="leading" constant="10" id="eIb-DG-pdv"/>
+                            <constraint firstItem="81H-Qq-HYm" firstAttribute="trailing" secondItem="BHG-xA-CHj" secondAttribute="trailing" id="wzI-go-sgE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8rX-Qu-Uu0"/>
+                    <connections>
+                        <outlet property="findContentLabel" destination="1Q6-pX-C1P" id="838-LH-hO3"/>
+                        <outlet property="searchForContentLabel" destination="eWI-q1-4wk" id="LwS-vZ-ZCM"/>
+                        <outlet property="searchTableView" destination="81H-Qq-HYm" id="Dfr-DT-anB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbK-ar-yFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6648" y="-24"/>
+            <point key="canvasLocation" x="6647.826086956522" y="-24.107142857142858"/>
         </scene>
         <!--Search-->
         <scene sceneID="eMq-K8-5yQ">
@@ -829,6 +876,7 @@
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="play.circle.fill" catalog="system" width="128" height="123"/>
         <image name="play.rectangle" catalog="system" width="128" height="93"/>
+        <image name="search" width="378" height="358"/>
         <image name="sermonsimage" width="750" height="262"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

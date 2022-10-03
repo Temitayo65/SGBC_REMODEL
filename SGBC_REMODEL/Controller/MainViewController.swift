@@ -69,6 +69,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 // Including the slice function just created in all view controller instances 
 extension UIViewController{
+    // to hide keyboard
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    
     func slice(_ string: String, from startingIndex: Int, to endIndex: Int) -> String {
         let chosenString = string
         var start = chosenString.startIndex
