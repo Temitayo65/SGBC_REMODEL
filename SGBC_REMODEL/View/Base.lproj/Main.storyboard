@@ -498,7 +498,7 @@
         <!--Sermon Audio Player View Controller-->
         <scene sceneID="fO0-ga-8TL">
             <objects>
-                <viewController id="htt-sB-Z8I" customClass="SermonAudioPlayerViewController" customModule="SGBC_REMODEL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playAudio" useStoryboardIdentifierAsRestorationIdentifier="YES" id="htt-sB-Z8I" customClass="SermonAudioPlayerViewController" customModule="SGBC_REMODEL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D6d-Nv-v6F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -749,21 +749,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggn-Nz-sZp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2680" y="1444"/>
-        </scene>
-        <!--Web View Controller-->
-        <scene sceneID="MY1-K9-JS4">
-            <objects>
-                <viewController storyboardIdentifier="WebView" id="zJe-Yr-jWY" customClass="WebViewController" customModule="SGBC_REMODEL" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Dg3-x9-fiq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="RyB-6A-118"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oxz-fl-g37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3483" y="1444"/>
         </scene>
         <!--News-->
         <scene sceneID="2zS-6Q-E7V">
