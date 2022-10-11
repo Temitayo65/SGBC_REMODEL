@@ -22,7 +22,7 @@ class HymnTableViewController: UITableViewController, UISearchBarDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // adding a search bar
-        let searchBar = UISearchBar(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: view.frame.width, height: 40)))
+        let searchBar = UISearchBar(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: view.frame.width, height: 50)))
         searchBar.delegate = self
         view.addSubview(searchBar)
         
@@ -112,7 +112,9 @@ class HymnTableViewController: UITableViewController, UISearchBarDelegate{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "WebView") as! WebViewController
+        //let vc = storyboard?.instantiateViewController(withIdentifier: "WebView") as! HymnWebViewController
+        let vc = HymnWebViewController()
+        
         let chosenHymn: String!
         if filteredData.isEmpty{
             chosenHymn = hymns[indexPath.row]}
@@ -139,7 +141,7 @@ class HymnTableViewController: UITableViewController, UISearchBarDelegate{
             //self.tableView.reloadData()
             }
             filteredData.append("Hymn 0.pdf") // temporary fix
-            filteredData.sort{$0 < $1}
+            sortHymn(hymnList: &filteredData, ascendingOrder: true)
             self.tableView.reloadData()
         }
     }
