@@ -103,16 +103,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     if gottenItem.title.lowercased().contains(searchText.lowercased()) || gottenItem.sermonPastor.first_name.lowercased().contains(searchText.lowercased()) || gottenItem.sermonPastor.last_name.lowercased().contains(searchText.lowercased())  {
                         secondFilteredData.append(gottenItem)
                     }
-                        
+                    
                 }
                 else if item is Podcast{
                     let gottenItem = item as! Podcast
                     if gottenItem.title.lowercased().contains(searchText.lowercased()){
                         secondFilteredData.append(gottenItem)
                     }
-                                        
+                    
                 }
-                
                 else if item is NewsData{
                     let gottenItem = item as! NewsData
                     if gottenItem.title.lowercased().contains(searchText.lowercased()){
@@ -121,13 +120,24 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                 }
             }
+            
+            self.searchTableView.reloadData()
         }
-        self.searchTableView.reloadData()
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         dataFromSearch = secondFilteredData[indexPath.row]
+        if let dataFromSearch = dataFromSearch as? Sermon{
+            let vc = storyboard?.instantiateViewController(withIdentifier: "playAudio") as! SermonAudioPlayerViewController
+            vc.sermonTitle = dataFromSearch.title
+            vc.preacherTitle = dataFromSearch.sermonPastor.first_name + " " + dataFromSearch.sermonPastor.last_name
+            vc.sermonAudioURL = dataFromSearch.sermonAudio.audio_url
+            vc.sermonImageURL = dataFromSearch.sermonImage?.image_url
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        else if let dataFromSearch = dataFromSearch as? Podcast{
+          print(dataFromSearch)
+        }
         
     }
     
